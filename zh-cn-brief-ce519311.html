@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>幸运飞艇资料索引 · 信息卡片式介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9fafc;
+      font-family: 'Inter', -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, system-ui, sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.4rem 1.2rem 3rem;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 520;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #e2e8f0;
+      color: #1e293b;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 520;
+      margin-top: 0.3rem;
+      margin-bottom: 0.6rem;
+      color: #334155;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: #1d4ed8;
+      text-decoration-thickness: 2px;
+    }
+
+    /* 卡片组 —— 信息卡片式 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 10px 28px -8px rgba(0, 0, 0, 0.04);
+      padding: 1.6rem 1.8rem;
+      border: 1px solid #eef2f6;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px #dbe4ed;
+    }
+
+    .card p {
+      margin-bottom: 0.3rem;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 0.6rem;
+      border-top: 1px solid #eef2f6;
+      padding-top: 0.6rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #eef3fa;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #2c3e50;
+      padding: 0.1rem 0.7rem;
+      margin-right: 0.3rem;
+      white-space: nowrap;
+    }
+
+    /* 主视觉区域 (hero 简洁版) */
+    .hero-visual {
+      margin-bottom: 2.2rem;
+      padding: 2.4rem 0 0.8rem;
+    }
+
+    .hero-visual p {
+      font-size: 1.05rem;
+      color: #475569;
+      max-width: 600px;
+      margin-bottom: 0.4rem;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #62748c;
+      margin-top: -0.2rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .inline-link-highlight {
+      background: #f1f5f9;
+      padding: 0.1rem 0.2rem;
+      border-radius: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 2.4rem 0 1.2rem;
+    }
+
+    /* 适合人群卡片列表 */
+    .audience-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .audience-list li {
+      background: #f1f5f9;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.9rem;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      padding-left: 0.4rem;
+      border-left: 4px solid #d1dbe8;
+      padding-left: 1rem;
+    }
+
+    .faq-item strong {
+      font-weight: 550;
+      color: #0f172a;
+    }
+
+    .faq-item p {
+      margin-bottom: 0.2rem;
+    }
+
+    .small-note {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.6rem 1rem 2rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .card {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .hero-visual {
+        padding-top: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 主视觉区域 -->
+  <div class="hero-visual">
+    <h1>幸运飞艇 · 信息索引</h1>
+    <p class="subhead">整理维度 &amp; 资料卡片 · 偏知识型内容</p>
+    <p>
+      从资料收集与信息组织的角度看，<a href="https://zh-cn-xyft.com">幸运飞艇</a> 是一个开放式的数据主题，其相关讨论、规则整理及走势观察往往分散于不同平台。本文以卡片形式归纳其基本信息、用途场景及适合人群，方便快速概览。
+    </p>
+  </div>
+
+  <!-- 用途卡片：主视觉+应用方向 -->
+  <h2>📋 用途卡片</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>规则参考 &amp; 术语整理</h3>
+      <p>飞艇类玩法中，名次、冠亚和、大小单双等是常见概念。许多爱好者会整理一份对照表，用于快速理解组合逻辑。该卡片常包含号码区间与对应赔率参考。</p>
+      <div class="card-meta">
+        <span class="tag">术语</span> <span class="tag">对照表</span> <span class="tag">基础</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>走势记录 &amp; 频率统计</h3>
+      <p>一部分用户偏向记录每期号码分布，用简单的频次统计或图标辅助观察冷热趋势。此类卡片通常以日期、期号、位置为维度，帮助纵向对比。</p>
+      <div class="card-meta">
+        <span class="tag">统计</span> <span class="tag">频次</span> <span class="tag">冷热</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>讨论索引 &amp; 社群归档</h3>
+      <p>各社区围绕飞艇的讨论帖、分析思路常常散落。部分资料整理者会按月份或主题制作索引卡片，链接到原始讨论楼，方便后续查证。</p>
+      <div class="card-meta">
+        <span class="tag">索引</span> <span class="tag">归档</span> <span class="tag">社群</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 适合人群卡片（用列表呈现，避免重复卡片结构） -->
+  <h2>🧭 适合人群</h2>
+  <p>以下人群在信息整理场景下对 <a href="https://zh-cn-xyft.com">幸运飞艇</a> 相关内容有较高需求：</p>
+  <ul class="audience-list">
+    <li>数据爱好者</li>
+    <li>规则研究者</li>
+    <li>社群资料员</li>
+    <li>策略整理者</li>
+    <li>新手科普作者</li>
+    <li>走势记录者</li>
+  </ul>
+  <p class="small-note">以上分类基于公开讨论中的自组织行为，不构成任何推荐或引导。</p>
+
+  <!-- 自然链接段落（第二处链接，嵌入句子） -->
+  <h2>🔗 资料索引 · 自然链接</h2>
+  <p>在进行信息归纳时，不少人会选择以 <a href="https://zh-cn-xyft.com">幸运飞艇</a> 关键词作为入口，聚合来自不同渠道的规则说明、数据截图与术语解释。这种索引方式有助于降低重复收集成本，也方便后续扩展新的观察维度。</p>
+
+  <!-- FAQ 摘要（不是完整问答，而是卡片化摘要） -->
+  <h2>❓ FAQ 摘要</h2>
+  <div class="faq-item">
+    <strong>资料整理时主要关注哪些字段？</strong>
+    <p>通常包括：期号、开奖号码、位置名次、冠亚和数值、大小单双属性。有些整理者还会加入遗漏值或出现次数。</p>
+  </div>
+  <div class="faq-item">
+    <strong>如何保持索引的时效性？</strong>
+    <p>部分资料站或社区会按月更新索引帖，同时将过时内容存档。使用 <a href="https://zh-cn-xyft.com">幸运飞艇</a> 作为固定入口时，建议留意信息标注的日期范围。</p>
+  </div>
+  <div class="faq-item">
+    <strong>卡片式整理与表格相比有什么优势？</strong>
+    <p>卡片式更适合模块化阅读，每张卡片独立聚焦一个子主题（如规则、走势、讨论），减少视觉干扰，方便按需取用。</p>
+  </div>
+
+  <!-- 提示性内容（偏客观） -->
+  <hr>
+  <p class="small-note" style="margin-top: 0.2rem;">
+    ⚡ 本文仅作信息组织方式展示，不涉及任何操作建议。所有内容均基于公开的资料整理实践。
+  </p>
+  <p class="small-note" style="margin-bottom: 0;">
+    最后一句话：任何资料索引都应尊重原始来源，并标注参考时间。
+  </p>
+</div>
+</body>
+</html>
